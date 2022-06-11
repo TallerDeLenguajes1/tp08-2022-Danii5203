@@ -39,6 +39,7 @@ namespace Program
             int nRegistro = 0;
             string guardarArchivo = @"C:\tp8-2022-Ejercicio1\tp08-2022-Danii5203\Ejercicio1\index.csv";
             StreamWriter writeStream = new StreamWriter(guardarArchivo);
+            writeStream.WriteLine("ID, NOMBRE, EXTENSION");
 
             if(_files != null){ //controlamos que haya archivos
                 foreach (FileInfo file in _files) //guardar archivos
@@ -62,7 +63,7 @@ namespace Program
                 foreach (string direct in _directoriosInternos){ //guardamos los directorios
                     Console.WriteLine($"================ Directorio {nRegistro} ================");
                     string[] nameDirect = direct.Split("\\"); //separamos el nombre de archivo y extencion
-                    string IdDirectExt = $"{nRegistro}, {nameDirect[nameDirect.Length-1]}, 'Sin Extención'"; //armamos lo que se guardara en el texto
+                    string IdDirectExt = $"{nRegistro}, {nameDirect[nameDirect.Length-1]}, 'Sin Extensión'"; //armamos lo que se guardara en el texto
 
                     Console.WriteLine("ID: "+nRegistro);
                     Console.WriteLine("Nombre: "+nameDirect[nameDirect.Length-1]);
